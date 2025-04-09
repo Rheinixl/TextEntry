@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Entry Study</title>
+    <link rel="stylesheet" href="textentry.css">
+</head>
+<body>
+<!-- Consent + Method Selection -->
+<div id="startScreen">
+    <h2>Text Entry Study</h2>
+    <p>Please read and sign the consent form before continuing:</p>
+
+    <textarea id="consentText" rows="10" cols="70" readonly>
+Consent Form:
+You are invited to take part in a study on text entry techniques.
+Your participation is voluntary, and you may withdraw at any time.
+The study involves typing phrases using different methods and logging performance data.
+No personally identifiable information will be shared.
+This study will take around 15-20 minutes, and you will be required to type in total 40 short phrases using different methods.
+You do not need to commute or spend any money for this study.
+The study may not lead to any direct benefit.
+By typing your name below, you consent to participate in the study.
+  </textarea><br><br>
+
+    <label for="participantName">Your full name:</label><br>
+    <input type="text" id="participantName" placeholder="Type your name to sign" /><br><br>
+
+    <button onclick="tryStartStudy('qwerty')">Start with QWERTY</button>
+    <button onclick="tryStartStudy('predictive')">Start with Predictive</button>
+</div>
+
+
+<!-- Main Experiment -->
+<div id="experimentUI" style="display:none;">
+    <h3 id="phraseDisplay">Loading phrase...</h3>
+    <textarea id="inputBox" placeholder="Start typing..."></textarea>
+    <div id="suggestions"></div>
+</div>
+
+<script type="module" src="index.js"></script>
+</body>
+</html>
